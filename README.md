@@ -4,14 +4,18 @@ Experimental, read-only diagnostic plugin for IntelliJ IDEA / PyCharm 2026.2 on 
 
 ## Build
 
-Prerequisites: JDK 21, Gradle 9.x, internet access to Gradle Plugin Portal and JetBrains repositories.
+Prerequisites: JDK 25, Gradle 9.x, internet access to Gradle Plugin Portal and JetBrains repositories.
 
 ```bash
+java -version
+gradle -q javaToolchains
 gradle buildPlugin
 ```
 
 The installable plugin ZIP is generated in `build/distributions/`.
 This repository does not yet include a Gradle wrapper or a prebuilt plugin binary.
+
+IntelliJ Platform 2026.2 dependencies contain Java 25 bytecode (class file version 69). JDK 21 (class file version 65) cannot compile against them. Install a full JDK 25 and ensure `gradle -q javaToolchains` detects it; if you just installed it, run `gradle --stop` before rebuilding.
 
 ## Usage
 
