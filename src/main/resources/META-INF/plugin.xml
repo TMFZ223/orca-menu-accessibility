@@ -1,0 +1,18 @@
+<idea-plugin>
+    <id>org.orcamenu.diagnostics</id>
+    <name>Orca Menu Diagnostics</name>
+    <version>0.1.0</version>
+    <vendor>Community prototype</vendor>
+    <description><![CDATA[<p>Read-only Swing menu accessibility diagnostics for Orca on Linux.</p>]]></description>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="org.orcamenu.MenuStartupActivity"/>
+    </extensions>
+    <actions>
+        <action id="OrcaMenuDiagnostics.Toggle" class="org.orcamenu.ToggleMonitorAction"
+                text="Toggle Orca Menu Diagnostics"
+                description="Start or stop read-only menu diagnostics">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
